@@ -20,4 +20,4 @@ This repository will be used during the Deep learning Python programming class t
 
 The goal of these classes is to classify this:
 
-![alt text](images/MNIST.png "MNIST example")
+![alt text](Images/MNIST.png "MNIST example")
