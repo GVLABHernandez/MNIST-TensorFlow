@@ -14,7 +14,6 @@ def get_MNIST_data():
     mnist = input_data.read_data_sets('./Data', one_hot=True)
     train_x, one_hots_train = mnist.train.next_batch(n_sample_train)
     test_x, one_hots_test = mnist.train.next_batch(n_sample_test)
-    number_test = [one_hots_test[i, :].argmax() for i in range(0, one_hots_test.shape[0])]
 
     return train_x, one_hots_train, test_x, one_hots_test
 
@@ -46,3 +45,34 @@ def confusion_matrix(cm, accuracy):
     plt.xlabel('Predicted label')
     all_sample_title = 'Accuracy Score: {0}'.format(accuracy)
     plt.title(all_sample_title, size=15)
+
+train_x, one_hots_train, test_x, one_hots_test = get_MNIST_data()
+number_test = [one_hots_test[i, :].argmax() for i in range(0, one_hots_test.shape[0])]
+
+plot_MNIST(x=train_x, one_hot=one_hots_train)
+
+n_label = len(np.unique(number_test))   # Number of class
+height = train_x.shape[1]               # All the pixels are represented as a vector (dim: 784)
+
+# Hyperparameters
+hyperparameters = {}
+
+# Session and context manager
+
+
+    # Placeholders
+
+
+    # Neural network
+
+    # Softmax layer
+
+    # Scope
+
+    # Initialize the Neural Network
+
+    # Train the Neural Network
+
+# Test the trained Neural Network
+
+# Confusion matrix
