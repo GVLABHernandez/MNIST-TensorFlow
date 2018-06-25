@@ -17,3 +17,7 @@ This repository will be used during the Deep learning Python programming class t
 - A fully connected Neural Network (DNN.py)
 - A Convolutional Neural Network (CNN.py) 
 - A Recurrent Neural Network with Long-Short Term Memory (LSTM) cells (RNN.py)
+
+The goal of these classes is to classify this:
+
+![alt text](images/MNIST.png "MNIST example")
