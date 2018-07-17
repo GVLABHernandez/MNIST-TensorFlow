@@ -5,7 +5,7 @@ import seaborn as sns
 from sklearn import metrics
 from tensorflow.examples.tutorials.mnist import input_data
 
-n_sample_train = 10000
+n_sample_train = 5000
 n_sample_test = 1000
 
 def get_MNIST_data():
@@ -62,8 +62,34 @@ def dense(input, name, in_size, out_size, activation="relu"):
             l = tf.nn.tanh(l)
         else:
             l = l
-    print(l)
+        print(l)
     return l
+
+def scope(y, y_, learning_rate=0.1):
+
+    #Learning rate
+    learning_rate = tf.Variable(learning_rate,  trainable=False)
+
+    # Loss function
+    loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(
+        labels=y, logits=y_), name="loss")
+
+    # Optimizer
+    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate,
+                                       name="optimizer").minimize(loss)
+
+    # Evaluate the model
+    correct = tf.equal(tf.cast(tf.argmax(y_, 1), tf.int32),
+                       tf.cast(tf.argmax(y, 1), tf.int32))
+    accuracy = tf.reduce_mean(tf.cast(correct, tf.float32), name="accuracy")
+
+    #  Tensorboard
+    writer = tf.summary.FileWriter('./Tensorboard/')
+    # run this command in the terminal to launch tensorboard:
+    # tensorboard --logdir=./Tensorboard/
+    writer.add_graph(graph=sess.graph)
+
+    return loss, accuracy, optimizer, writer
 
 train_x, one_hots_train, test_x, one_hots_test = get_MNIST_data()
 number_test = [one_hots_test[i, :].argmax() for i in range(0, one_hots_test.shape[0])]
@@ -87,19 +113,38 @@ with tf.variable_scope(tf.get_variable_scope()):
     y = tf.placeholder(tf.float32, [None, n_label], name='Y')
 
     print(x)
+
     # Neural network
-    l1 = dense(input=x, name="layer_1", in_size=height, out_size=10, activation="relu")
-    l2 = dense(input=l1, name="layer_2", in_size=10, out_size=10, activation="relu")
-    y_ = dense(input=l2, name="output_layer", in_size=10, out_size=n_label, activation="None")
+    l1 = dense(input=x, name="layer_1", in_size=height, out_size=256, activation="relu")
+    l2 = dense(input=l1, name="layer_2", in_size=256, out_size=256, activation="relu")
+    l3 = dense(input=l2, name="output_layer", in_size=256, out_size=n_label, activation="None")
 
     # Softmax layer
+    y_ = tf.nn.softmax(l3, name="softmax")
 
-    # Scope
+    loss, accuracy, optimizer, writer = scope(y, y_, learning_rate=0.01)
 
     # Initialize the Neural Network
+    sess.run(tf.global_variables_initializer())
 
     # Train the Neural Network
+    loss_history = []
+    acc_history = []
+    epoch = 1000
+    train_data = {x: train_x, y: one_hots_train}
+
+    for e in range(epoch):
+
+        _, l, acc = sess.run([optimizer, loss, accuracy], feed_dict=train_data)
+
+        loss_history.append(l)
+        acc_history.append(acc)
+
+        print("Epoch " + str(e) + " - Loss: " + str(l) + " - " + str(acc))
+
+plt.plot(acc_history)
 
 # Test the trained Neural Network
+
 
 # Confusion matrix
