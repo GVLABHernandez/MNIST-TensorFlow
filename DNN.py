@@ -142,6 +142,7 @@ with tf.variable_scope(tf.get_variable_scope()):
 
         print("Epoch " + str(e) + " - Loss: " + str(l) + " - " + str(acc))
 
+plt.figure()
 plt.plot(acc_history)
 
 # Test the trained Neural Network

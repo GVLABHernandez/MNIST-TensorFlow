@@ -119,26 +119,12 @@ with tf.variable_scope(tf.get_variable_scope()):
 
     keep_prob = tf.placeholder(tf.float32, name='keep_prob')
 
-    # Neural network
-    l1 = tf.layers.conv2d(inputs=x, kernel_size=[5, 5], strides=[1, 1], filters=16, padding='SAME',
-                         activation=tf.nn.relu, name="Conv_1")
-    print(l1)
-    l1 = tf.layers.max_pooling2d(inputs=l1, pool_size=[2, 2], strides=[2, 2], padding='SAME')
-    print(l1)
+    # Convolutional Neural network
 
-    l2 = tf.layers.conv2d(inputs=l1, kernel_size=[5, 5], strides=[1, 1], filters=32, padding='SAME',
-                         activation=tf.nn.relu, name="Conv_2")
-    print(l2)
-    l2 = tf.layers.max_pooling2d(inputs=l2, pool_size=[2, 2], strides=[2, 2], padding='SAME')
-    print(l2)
+
 
     # Reshape to a fully connected layers
-    size = l2.get_shape().as_list()
-    l3 = tf.reshape(l2, [-1, size[1] * size[2] * size[3]], name="reshape_to_dense")
-    print(l3)
 
-    l4 = dense(input=l3, name="output_layer", in_size=size[1] * size[2] * size[3], out_size=n_label, activation="None")
-    print(l4)
 
     # Softmax layer
     y_ = tf.nn.softmax(l4, name='softmax')
@@ -165,6 +151,7 @@ with tf.variable_scope(tf.get_variable_scope()):
 
         print("Epoch " + str(e) + " - Loss: " + str(l) + " - " + str(acc))
 
+plt.figure()
 plt.plot(acc_history)
 
 # Test the trained Neural Network
