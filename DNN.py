@@ -146,6 +146,16 @@ plt.figure()
 plt.plot(acc_history)
 
 # Test the trained Neural Network
-
+test_data = {x: test_x, y: one_hots_test}
+l, acc = sess.run([loss, accuracy], feed_dict=test_data)
+print("Test - Loss: " + str(l) + " - " + str(acc))
+predictions = y_.eval(feed_dict=test_data, session=sess)
+predictions_int = (predictions == predictions.max(axis=1, keepdims=True)).astype(int)
+predictions_numbers = [predictions_int[i, :].argmax() for i in range(0, predictions_int.shape[0])]
 
 # Confusion matrix
+cm = metrics.confusion_matrix(number_test, predictions_numbers)
+print(cm)
+confusion_matrix(cm=cm, accuracy=acc)
+cmN = cm / cm.sum(axis=0)
+confusion_matrix(cm=cmN, accuracy=acc)
