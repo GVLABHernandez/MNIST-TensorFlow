@@ -63,7 +63,7 @@ def dense(input, name, in_size, out_size, activation="relu"):
         print(l)
     return l
 
-def scope(y, y_, learning_rate=0.1):
+def scope(y, y_, sess, learning_rate=0.1):
 
     #Learning rate
     learning_rate = tf.Variable(learning_rate,  trainable=False)
@@ -108,82 +108,21 @@ height = train_x.shape[1]
 width = train_x.shape[2]
 
 # Session and context manager
-tf.reset_default_graph()
-sess = tf.Session()
 
 with tf.variable_scope(tf.get_variable_scope()):
 
     # Placeholders
-    x = tf.placeholder(tf.float32, [None, height, width, 1], name='X')
-    y = tf.placeholder(tf.float32, [None, n_label], name='Y')
 
     # Convolutional Neural network
-    c1 = tf.layers.conv2d(inputs=x, kernel_size=[5, 5], strides=[1, 1],
-                          filters=16, padding='SAME', activation=tf.nn.relu,
-                          name='Conv_1')
-    print(c1)
-    c1 = tf.layers.max_pooling2d(inputs=c1, pool_size=[2, 2],
-                                 strides=[2, 2], padding='SAME')
-    print(c1)
-
-    c2 = tf.layers.conv2d(inputs=c1, kernel_size=[3, 3], strides=[1, 1],
-                          filters=32, padding='SAME', activation=tf.nn.relu,
-                          name='Conv_2')
-    print(c2)
-    c2 = tf.layers.max_pooling2d(inputs=c2, pool_size=[2, 2],
-                                 strides=[2, 2], padding='SAME')
-    print(c2)
-
-    # Reshape to a fully connected layers
-    size = c2.get_shape().as_list()
-
-    l1 = tf.reshape(c2, [-1, size[1] * size[2] * size[3]],
-                    name='reshape_to_fully')
-    print(l1)
-
-    l2 = dense(input=l1, name="output_layers",
-               in_size=l1.get_shape().as_list()[1], out_size=n_label,
-               activation='None')
 
     # Softmax layer
-    y_ = tf.nn.softmax(l2, name='softmax')
-    print(y_)
 
     # Scope
-    loss, accuracy, optimizer, writer = scope(y, y_, learning_rate=0.01)
 
     # Initialize the Neural Network
-    sess.run(tf.global_variables_initializer())
 
     # Train the Neural Network
-    loss_history = []
-    acc_history = []
-    epoch = 100
-    train_data = {x: train_x, y: one_hots_train}
-
-    for e in range(epoch):
-
-        _, l, acc = sess.run([optimizer, loss, accuracy], feed_dict=train_data)
-
-        loss_history.append(l)
-        acc_history.append(acc)
-
-        print("Epoch " + str(e) + " - Loss: " + str(l) + " - " + str(acc))
-
-plt.figure()
-plt.plot(acc_history)
 
 # Test the trained Neural Network
-test_data = {x: test_x, y: one_hots_test}
-l, acc = sess.run([loss, accuracy], feed_dict=test_data)
-print("Test - Loss: " + str(l) + " - " + str(acc))
-predictions = y_.eval(feed_dict=test_data, session=sess)
-predictions_int = (predictions == predictions.max(axis=1, keepdims=True)).astype(int)
-predictions_numbers = [predictions_int[i, :].argmax() for i in range(0, predictions_int.shape[0])]
 
 # Confusion matrix
-cm = metrics.confusion_matrix(number_test, predictions_numbers)
-print(cm)
-confusion_matrix(cm=cm, accuracy=acc)
-cmN = cm / cm.sum(axis=0)
-confusion_matrix(cm=cmN, accuracy=acc)
