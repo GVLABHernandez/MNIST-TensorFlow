@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60f934fa-2103-4584-bc00-0fe879691102" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/AutoEncoder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MNIST-TensorFlow.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MNIST-TensorFlow.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/CNN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CNN.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/DNN.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RNN.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,31 +21,31 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+            <state relative-caret-position="544">
+              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
-                <element signature="e#261#512#0" />
-                <element signature="e#547#1048#0" />
-                <element signature="e#1091#1370#0" />
-                <element signature="e#1439#2030#0" />
-                <element signature="e#2074#2925#0" />
+                <element signature="e#276#527#0" />
+                <element signature="e#562#1040#0" />
+                <element signature="e#1121#1797#0" />
+                <element signature="e#1838#2643#0" />
+                <element signature="e#4153#4432#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CNN.py">
+        <entry file="file://$PROJECT_DIR$/AutoEncoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="124" selection-start-line="124" selection-end-line="124" />
+            <state relative-caret-position="527">
+              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
               <folding>
-                <element signature="e#276#695#0" />
-                <element signature="e#730#1208#0" />
-                <element signature="e#1277#1868#0" />
-                <element signature="e#1912#2763#0" />
-                <element signature="e#2806#3085#0" />
+                <element signature="e#0#36#0" expanded="true" />
+                <element signature="e#360#611#0" />
+                <element signature="e#646#1124#0" />
+                <element signature="e#1205#1881#0" />
+                <element signature="e#3330#3609#0" />
               </folding>
             </state>
           </provider>
@@ -66,36 +68,39 @@
       <list>
         <option value="$PROJECT_DIR$/RNN.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/DNN.py" />
         <option value="$PROJECT_DIR$/CNN.py" />
+        <option value="$PROJECT_DIR$/AutoEncoder.py" />
+        <option value="$PROJECT_DIR$/DNN.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="128" />
-    <option name="width" value="1440" />
-    <option name="height" value="773" />
+    <option name="x" value="1713" />
+    <option name="width" value="1734" />
+    <option name="height" value="1407" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="MNIST-TensorFlow" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MNIST-TensorFlow" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../GitHub (No publish)/MNIST-TensorFlow(Final)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -124,10 +129,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="3456" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.13359274" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.143404" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -143,13 +148,11 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Python Console" order="3" weight="0.2680965" />
+      <window_info active="true" anchor="right" id="Python Console" order="3" visible="true" weight="0.41784453" />
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/RNN.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/RNN.py" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -157,31 +160,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CNN.py">
+    <entry file="file://$PROJECT_DIR$/CNN.py" />
+    <entry file="file://$PROJECT_DIR$/AutoEncoder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="124" selection-start-line="124" selection-end-line="124" />
+        <state relative-caret-position="527">
+          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
           <folding>
-            <element signature="e#276#695#0" />
-            <element signature="e#730#1208#0" />
-            <element signature="e#1277#1868#0" />
-            <element signature="e#1912#2763#0" />
-            <element signature="e#2806#3085#0" />
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#360#611#0" />
+            <element signature="e#646#1124#0" />
+            <element signature="e#1205#1881#0" />
+            <element signature="e#3330#3609#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="95" lean-forward="true" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="544">
+          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#261#512#0" />
-            <element signature="e#547#1048#0" />
-            <element signature="e#1091#1370#0" />
-            <element signature="e#1439#2030#0" />
-            <element signature="e#2074#2925#0" />
+            <element signature="e#276#527#0" />
+            <element signature="e#562#1040#0" />
+            <element signature="e#1121#1797#0" />
+            <element signature="e#1838#2643#0" />
+            <element signature="e#4153#4432#0" />
           </folding>
         </state>
       </provider>

@@ -5,21 +5,18 @@ import seaborn as sns
 from sklearn import metrics
 from tensorflow.examples.tutorials.mnist import input_data
 import random
+import matplotlib
+import matplotlib.cm as cm
+from sklearn.decomposition import PCA
 
-n_sample_train = 10000
-n_sample_test = 1000
+n_sample_train = 50000
+n_sample_test = 10000
 
 def get_MNIST_data():
 
     mnist = input_data.read_data_sets('./Data', one_hot=True)
     train_x, one_hots_train = mnist.train.next_batch(n_sample_train)
     test_x, one_hots_test = mnist.train.next_batch(n_sample_test)
-
-    train_x = train_x.reshape(-1, 28, 28)
-    test_x = test_x.reshape(-1, 28, 28)
-
-    train_x = train_x[:, :, :, np.newaxis]
-    test_x = test_x[:, :, :, np.newaxis]
 
     return train_x, one_hots_train, test_x, one_hots_test
 
@@ -43,51 +40,29 @@ def plot_MNIST(x, one_hot):
                     wspace=0.05, hspace=0.3)
     plt.show()
 
-def dense(input, name, in_size, out_size, activation="relu"):
+def dense(inputs, in_size, out_size, activation='sigmoid', name='layer'):
 
     with tf.variable_scope(name, reuse=False):
-        w = tf.get_variable("w", shape=[in_size, out_size],
-                            initializer=tf.random_normal_initializer(mean=0, stddev=0.1))
+
+        w = tf.get_variable("w", shape=[in_size, out_size], initializer=tf.random_normal_initializer(mean=0., stddev=0.1))
         b = tf.get_variable("b", shape=[out_size], initializer=tf.constant_initializer(0.0))
 
-        l = tf.add(tf.matmul(input, w), b)
+        l = tf.add(tf.matmul(inputs, w), b)
 
-        if activation == "relu":
+        if activation == 'relu':
             l = tf.nn.relu(l)
-        elif activation == "sigmoid":
+        elif activation == 'sigmoid':
             l = tf.nn.sigmoid(l)
-        elif activation == "tanh":
+        elif activation == 'tanh':
             l = tf.nn.tanh(l)
+        elif activation == 'leaky_relu':
+            l = tf.nn.leaky_relu(l)
         else:
             l = l
-        print(l)
+
+        l = tf.nn.dropout(l, rate=dropout_rate)
+
     return l
-
-def scope(y, y_, sess, learning_rate=0.1):
-
-    #Learning rate
-    learning_rate = tf.Variable(learning_rate,  trainable=False)
-
-    # Loss function
-    loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(
-        labels=y, logits=y_), name="loss")
-
-    # Optimizer
-    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate,
-                                       name="optimizer").minimize(loss)
-
-    # Evaluate the model
-    correct = tf.equal(tf.cast(tf.argmax(y_, 1), tf.int32),
-                       tf.cast(tf.argmax(y, 1), tf.int32))
-    accuracy = tf.reduce_mean(tf.cast(correct, tf.float32), name="accuracy")
-
-    #  Tensorboard
-    writer = tf.summary.FileWriter('./Tensorboard/')
-    # run this command in the terminal to launch tensorboard:
-    # tensorboard --logdir=./Tensorboard/
-    writer.add_graph(graph=sess.graph)
-
-    return loss, accuracy, optimizer, writer
 
 def confusion_matrix(cm, accuracy):
 
@@ -104,25 +79,43 @@ number_test = [one_hots_test[i, :].argmax() for i in range(0, one_hots_test.shap
 plot_MNIST(x=train_x, one_hot=one_hots_train)
 
 n_label = len(np.unique(number_test))   # Number of class
-height = train_x.shape[1]
-width = train_x.shape[2]
+height = train_x.shape[1]               # All the pixels are represented as a vector (dim: 784)
+
+z_dimension = 2 # Latent space dimension
+
+# Hyperparameters
 
 # Session and context manager
+tf.reset_default_graph()
+sess = tf.Session()
 
 with tf.variable_scope(tf.get_variable_scope()):
 
     # Placeholders
+    x = tf.placeholder(tf.float32, [None, height], name='X')
+    dropout_rate = tf.placeholder(tf.float32, name='dropout_rate')
 
-    # Convolutional Neural network
+    # Encoder
+    print('')
+    print("ENCODER")
 
-    # Softmax layer
+    print('')
+    print("DECODER")
+    # Decoder
 
     # Scope
 
     # Initialize the Neural Network
+    sess.run(tf.global_variables_initializer())
 
     # Train the Neural Network
 
-# Test the trained Neural Network
+    # Encode the training data
 
-# Confusion matrix
+    # Reconstruct the data at the output of the decoder
+
+# Plot the latent space
+
+# Plot reconstruction
+
+# PCA
