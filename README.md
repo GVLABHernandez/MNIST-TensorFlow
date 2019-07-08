@@ -14,6 +14,7 @@ Deep learning Python programming class
 
 This repository will be used during the Deep learning Python programming class to create:
 
+- Multi-layer perceptron (DNN.py)
 - AutoEncoder (AutoEncoder.py)
 
 The goal of these classes is to get a latent space representaiton of this:
