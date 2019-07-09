@@ -132,5 +132,8 @@ with tf.variable_scope(tf.get_variable_scope()):
 
     # Initialize the Neural Network
     sess.run(tf.global_variables_initializer())
+    sess.run(tf.global_variables_initializer())
+    sess.run(tf.global_variables_initializer())
+    sess.run(tf.global_variables_initializer())
 
     # Train the Neural Network

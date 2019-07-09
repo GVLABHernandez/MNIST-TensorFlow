@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60f934fa-2103-4584-bc00-0fe879691102" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/AutoEncoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MNIST-TensorFlow.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MNIST-TensorFlow.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CNN.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/DNN.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RNN.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,15 +16,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+            <state relative-caret-position="1105">
+              <caret line="137" selection-start-line="137" selection-end-line="137" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
                 <element signature="e#276#527#0" />
                 <element signature="e#562#1040#0" />
                 <element signature="e#1121#1797#0" />
                 <element signature="e#1838#2643#0" />
-                <element signature="e#4153#4432#0" />
+                <element signature="e#2686#2965#0" />
               </folding>
             </state>
           </provider>
@@ -38,14 +33,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AutoEncoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
+            <state relative-caret-position="476">
+              <caret line="74" selection-start-line="74" selection-end-line="74" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
                 <element signature="e#360#611#0" />
                 <element signature="e#646#1124#0" />
                 <element signature="e#1205#1881#0" />
-                <element signature="e#3330#3609#0" />
               </folding>
             </state>
           </provider>
@@ -100,7 +94,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../GitHub (No publish)/MNIST-TensorFlow(Final)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -132,7 +126,7 @@
     <frame x="-8" y="-8" width="3456" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.143404" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14428739" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -161,31 +155,30 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CNN.py" />
-    <entry file="file://$PROJECT_DIR$/AutoEncoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="84" lean-forward="true" selection-start-line="84" selection-end-line="84" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#360#611#0" />
-            <element signature="e#646#1124#0" />
-            <element signature="e#1205#1881#0" />
-            <element signature="e#3330#3609#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="1105">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
             <element signature="e#276#527#0" />
             <element signature="e#562#1040#0" />
             <element signature="e#1121#1797#0" />
             <element signature="e#1838#2643#0" />
-            <element signature="e#4153#4432#0" />
+            <element signature="e#2686#2965#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AutoEncoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#360#611#0" />
+            <element signature="e#646#1124#0" />
+            <element signature="e#1205#1881#0" />
           </folding>
         </state>
       </provider>
