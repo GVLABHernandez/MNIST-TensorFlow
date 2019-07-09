@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="60f934fa-2103-4584-bc00-0fe879691102" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AutoEncoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/AutoEncoder.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DNN.py" beforeDir="false" afterPath="$PROJECT_DIR$/DNN.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,15 +17,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DNN.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1105">
-              <caret line="137" selection-start-line="137" selection-end-line="137" />
+            <state relative-caret-position="1192">
+              <caret line="191" column="44" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="44" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
                 <element signature="e#276#527#0" />
                 <element signature="e#562#1040#0" />
-                <element signature="e#1121#1797#0" />
-                <element signature="e#1838#2643#0" />
-                <element signature="e#2686#2965#0" />
+                <element signature="e#1121#1712#0" />
+                <element signature="e#1753#2558#0" />
+                <element signature="e#2618#3481#0" />
+                <element signature="e#3538#4013#0" />
+                <element signature="e#4056#4335#0" />
               </folding>
             </state>
           </provider>
@@ -33,13 +36,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AutoEncoder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="74" selection-start-line="74" selection-end-line="74" />
+            <state relative-caret-position="1192">
+              <caret line="217" selection-start-line="217" selection-end-line="217" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
-                <element signature="e#360#611#0" />
-                <element signature="e#646#1124#0" />
-                <element signature="e#1205#1881#0" />
+                <element signature="e#451#702#0" />
+                <element signature="e#737#1215#0" />
+                <element signature="e#1296#1923#0" />
+                <element signature="e#1964#2577#0" />
+                <element signature="e#2620#2899#0" />
+                <element signature="e#2937#3019#0" />
+                <element signature="e#3065#3165#0" />
               </folding>
             </state>
           </provider>
@@ -69,7 +76,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1713" />
+    <option name="x" value="-7" />
     <option name="width" value="1734" />
     <option name="height" value="1407" />
   </component>
@@ -123,10 +130,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="3456" height="1416" extended-state="6" />
+    <frame x="1713" y="0" width="1734" height="1407" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14428739" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.12603062" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -142,7 +149,7 @@
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Python Console" order="3" visible="true" weight="0.41784453" />
+      <window_info active="true" anchor="right" id="Python Console" order="3" visible="true" weight="0.4348865" />
     </layout>
   </component>
   <component name="editorHistoryManager">
@@ -155,30 +162,36 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CNN.py" />
-    <entry file="file://$PROJECT_DIR$/DNN.py">
+    <entry file="file://$PROJECT_DIR$/AutoEncoder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        <state relative-caret-position="1192">
+          <caret line="217" selection-start-line="217" selection-end-line="217" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#276#527#0" />
-            <element signature="e#562#1040#0" />
-            <element signature="e#1121#1797#0" />
-            <element signature="e#1838#2643#0" />
-            <element signature="e#2686#2965#0" />
+            <element signature="e#451#702#0" />
+            <element signature="e#737#1215#0" />
+            <element signature="e#1296#1923#0" />
+            <element signature="e#1964#2577#0" />
+            <element signature="e#2620#2899#0" />
+            <element signature="e#2937#3019#0" />
+            <element signature="e#3065#3165#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AutoEncoder.py">
+    <entry file="file://$PROJECT_DIR$/DNN.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        <state relative-caret-position="1192">
+          <caret line="191" column="44" selection-start-line="191" selection-start-column="44" selection-end-line="191" selection-end-column="44" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#360#611#0" />
-            <element signature="e#646#1124#0" />
-            <element signature="e#1205#1881#0" />
+            <element signature="e#276#527#0" />
+            <element signature="e#562#1040#0" />
+            <element signature="e#1121#1712#0" />
+            <element signature="e#1753#2558#0" />
+            <element signature="e#2618#3481#0" />
+            <element signature="e#3538#4013#0" />
+            <element signature="e#4056#4335#0" />
           </folding>
         </state>
       </provider>

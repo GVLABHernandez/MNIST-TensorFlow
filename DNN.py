@@ -52,12 +52,10 @@ def dense(inputs, in_size, out_size, activation='sigmoid', name='layer'):
             l = tf.nn.sigmoid(l)
         elif activation == 'tanh':
             l = tf.nn.tanh(l)
-        elif activation == 'leaky_relu':
-            l = tf.nn.leaky_relu(l)
         else:
             l = l
 
-        l = tf.nn.dropout(l, rate=dropout_rate)
+        l = tf.nn.dropout(l, keep_prob)
 
     return l
 
@@ -81,6 +79,52 @@ def scope(sess, hyperparameters):
     writer.add_graph(graph=sess.graph)
 
     return optimizer, loss, accuracy
+
+def train(x, y, keep_prob, train_x, one_hots_train):
+
+    loss_history, acc_history = [], []
+
+    for epoch in range(hyperparameters['maxEpoch']):
+
+        i = 0
+        loss_batch, acc_batch = [], []
+
+        while i < n_sample_train:
+
+            start = i
+            end = i + hyperparameters['batch_size']
+
+            train_data = {x: train_x[start:end], y: one_hots_train[start:end], keep_prob: 0.8}
+
+            _, l, acc = sess.run([optimizer, loss, accuracy], feed_dict=train_data)
+
+            loss_batch.append(l)
+            acc_batch.append(acc)
+
+            i += hyperparameters['batch_size']
+
+        epoch_loss = np.mean(loss_batch)
+        epoch_acc = np.mean(acc_batch)
+
+        loss_history.append(epoch_loss)
+        acc_history.append(epoch_acc)
+
+        print('Epoch', epoch, '/', hyperparameters['maxEpoch'], '. : Loss:', epoch_loss, ' - Accuracy', epoch_acc)
+
+    return loss_history, acc_history
+
+def test(x, y, keep_prob, test_x, one_hots_test):
+
+    # Test the Neural Network
+    test_data = {x: test_x, y: one_hots_test, keep_prob: 1}
+    acc = sess.run(accuracy, feed_dict=test_data)
+    predictions = y_.eval(feed_dict=test_data, session=sess)
+    one_hots_predictions = (predictions == predictions.max(axis=1, keepdims=True)).astype(int)
+    number_predicted = [one_hots_predictions[i, :].argmax() for i in range(0, one_hots_predictions.shape[0])]
+
+    print('Test accuracy ' + str(acc))
+
+    return acc, number_predicted
 
 def confusion_matrix(cm, accuracy):
 
@@ -113,7 +157,7 @@ with tf.variable_scope(tf.get_variable_scope()):
     x = tf.placeholder(tf.float32, [None, height], name='X')
     y = tf.placeholder(tf.float32, [None, n_label], name='Y')
 
-    dropout_rate = tf.placeholder(tf.float32, name='dropout_rate') # Change from keep_prob to dropout rate - keep_prob = 1 - dropout_rate
+    keep_prob = tf.placeholder(tf.float32, name='keep_prob')
 
     # Neural network
     print(x)
@@ -134,3 +178,15 @@ with tf.variable_scope(tf.get_variable_scope()):
     sess.run(tf.global_variables_initializer())
 
     # Train the Neural Network
+    loss_history, acc_history = train(x, y, keep_prob, train_x, one_hots_train)
+
+# Test the trained Neural Network
+accuracy, number_predicted = test(x, y, keep_prob, test_x, one_hots_test)
+
+# Confusion matrix
+cm = metrics.confusion_matrix(number_test, number_predicted)
+print(cm)
+cmxN = cm / cm.astype(np.float).sum(axis=0)
+print(cmxN)
+
+confusion_matrix(cm=cmxN, accuracy=accuracy)
