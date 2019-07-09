@@ -92,18 +92,6 @@ def confusion_matrix(cm, accuracy):
     all_sample_title = 'Accuracy Score: {0}'.format(accuracy)
     plt.title(all_sample_title, size=15)
 
-def encoder(z, train_x, sess):
-
-    encoded = sess.run(z, feed_dict={x: train_x, dropout_rate: 0})
-
-    return encoded
-
-def reconstruct(x_hat, train_x, sess):
-
-    reconstructed = sess.run(x_hat, feed_dict={x: train_x, dropout_rate: 0.2})
-
-    return reconstructed
-
 train_x, one_hots_train, test_x, one_hots_test = get_MNIST_data()
 number_test = [one_hots_test[i, :].argmax() for i in range(0, one_hots_test.shape[0])]
 
@@ -213,5 +201,8 @@ with tf.variable_scope(tf.get_variable_scope()):
 
 
 # Plot reconstruction
+
+
+
 
 # PCA
