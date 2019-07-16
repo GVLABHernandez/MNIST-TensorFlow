@@ -9,6 +9,7 @@ Deep learning Python programming class
 - PyCharm community edition: https://www.jetbrains.com/pycharm/download/#section=windows
 - Python package: tensorflow, numpy, matplotlib, sklearn, seaborn, random
 - How to install python package: https://packaging.python.org/tutorials/installing-packages/
+- Anaconda: https://www.anaconda.com/distribution/
 
 ### Overview
 
